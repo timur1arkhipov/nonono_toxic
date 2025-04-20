@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./ratings.json:/app/ratings.json
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN} 
